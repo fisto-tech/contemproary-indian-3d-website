@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaranya Estates | Contemporary Tamil Nadu Luxury Living</title>
+    <meta name="description" content="Experience the pinnacle of tropical modernism at Aaranya Estates. A cinematic journey through luxury architectural villas in ECR Chennai, Tamil Nadu.">
+    
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="icon" href="aaranya-estate.webp" type="image/x-icon" sizes="any">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cinematic Noise Overlay -->
+    <div class="noise"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <img src="aaranya-estate.webp" alt="Aaranya Estates" id="preloader-logo">
+            </div>
+            <div class="loading-bar-container">
+                <div id="loading-bar"></div>
+            </div>
+            <div id="loading-text">CRAFTING SPATIAL HARMONY 0%</div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="side-nav-container">
+        <div class="logo-fixed">
+            <a href="#home">
+                <img src="aaranya-estate.webp" alt="Aaranya Estates" id="nav-logo">
+            </a>
+        </div>
+        <nav class="desktop-nav">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#gallery">Atmosphere</a></li>
+                <li><a href="#contact">Inquire</a></li>
+            </ul>
+        </nav>
+        <div class="menu-trigger">
+            <span class="menu-text">MENU</span>
+            <div class="burger">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-logo">
+                <img src="aaranya-estate.webp" alt="Aaranya Estates">
+            </div>
+            <div class="mobile-menu-close">&times;</div>
+        </div>
+        <ul class="mobile-links">
+            <li style="--i:1"><a href="#home">The Estate</a></li>
+            <li style="--i:2"><a href="#experience">Experience</a></li>
+            <li style="--i:3"><a href="#gallery">Gallery</a></li>
+            <li style="--i:4"><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+            
+            <!-- 1. Redesigned Hero Section (Editorial Poster Style) -->
+            <section id="home" class="hero">
+                <div class="hero-split">
+                    <div class="hero-visual">
+                        <img src="frames/00001.webp" alt="Aaranya Villa" class="hero-main-img">
+                        <div class="hero-overlay"></div>
+                    </div>
+                    <div class="hero-info">
+                        <div class="hero-header reveal">
+                            <span class="eyebrow">The Masterpiece</span>
+                            <h1 class="hero-title">AARANYA<br><span class="accent-text">ESTATES</span></h1>
+                        </div>
+                        <div class="hero-description reveal">
+                            <p>A cinematic dialogue between contemporary architecture and the coastal soul of Tamil Nadu. Experience a new dimension of luxury modernism.</p>
+                        </div>
+                        <div class="hero-footer reveal">
+                            <div class="hero-meta">
+                                <span>ECR / CHENNAI</span>
+                                <span>12.84° N / 80.22° E</span>
+                            </div>
+                            <div class="hero-cta">
+                                <a href="#experience" class="btn btn-primary">EXPLORE SPACE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- 2. Cinematic Walkthrough -->
+            <section id="experience" class="sequence-container">
+                <div class="canvas-sticky">
+                    <canvas id="sequence-canvas"></canvas>
+                    
+                    <!-- HUD Overlays -->
+                    <div class="hud-container">
+                        <div class="hud-popup" data-start="0.05" data-end="0.18" style="top: 20%; left: 15%;">
+                            <div class="hud-icon">+</div>
+                            <div class="hud-content">
+                                <h3>The Threshold</h3>
+                                <p>A grand transition from city to sanctuary.</p>
+                                <div class="hud-detail">The entrance sequence utilizes a 40-foot wide monolithic concrete canopy, framing the coastal horizon while providing essential thermal mass for the tropical climate.</div>
+                            </div>
+                        </div>
+                        <div class="hud-popup" data-start="0.25" data-end="0.38" style="top: 35%; right: 15%;">
+                            <div class="hud-icon">+</div>
+                            <div class="hud-content">
+                                <h3>Tropical Modernism</h3>
+                                <p>Living volumes designed for air and light.</p>
+                                <div class="hud-detail">Passive cooling strategies are integrated through cross-ventilation corridors and deep overhangs that mitigate solar gain while maintaining 270-degree views.</div>
+                            </div>
+                        </div>
+                        <div class="hud-popup" data-start="0.45" data-end="0.58" style="bottom: 25%; left: 20%;">
+                            <div class="hud-icon">+</div>
+                            <div class="hud-content">
+                                <h3>Material Silence</h3>
+                                <p>Raw concrete meets warm teak and stone.</p>
+                                <div class="hud-detail">Sustainably sourced Burmese teak is paired with locally quarried granite, creating a tactile dialogue between natural textures and refined modernist forms.</div>
+                            </div>
+                        </div>
+                        <div class="hud-popup" data-start="0.65" data-end="0.78" style="top: 25%; left: 50%; transform: translateX(-50%);">
+                            <div class="hud-icon">+</div>
+                            <div class="hud-content">
+                                <h3>Light & Shadow</h3>
+                                <p>Play of natural elements across surfaces.</p>
+                                <div class="hud-detail">The rhythmic concrete fins act as a functional sundial, casting dynamic shadows that evolve throughout the day, transforming the interior atmosphere.</div>
+                            </div>
+                        </div>
+                        <div class="hud-popup" data-start="0.85" data-end="0.98" style="bottom: 20%; right: 10%;">
+                            <div class="hud-icon">+</div>
+                            <div class="hud-content">
+                                <h3>Spatial Harmony</h3>
+                                <p>Panoramic views of the coastal horizon.</p>
+                                <div class="hud-detail">The infinity edge pool serves as a visual bridge between the built environment and the Bay of Bengal, dissolving the boundary between architecture and nature.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="depth-layers">
+                        <div class="depth-layer layer-1">CHENNAI</div>
+                        <div class="depth-layer layer-2">ECR</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Redesigned Stats Section (Architectural Grid) -->
+            <section id="stats" class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-item reveal">
+                        <span class="eyebrow">Inventory</span>
+                        <h3 class="counter" data-target="22">0</h3>
+                        <p>Luxury Residences</p>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="eyebrow">Trust</span>
+                        <h3 class="counter" data-target="142">0</h3>
+                        <p>Global Families</p>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="eyebrow">Recognition</span>
+                        <h3 class="counter" data-target="11">0</h3>
+                        <p>Architecture Awards</p>
+                    </div>
+                    <div class="stat-item reveal">
+                        <span class="eyebrow">History</span>
+                        <h3 class="counter" data-target="14">0</h3>
+                        <p>Years of Legacy</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Curated Showcase (Horizontal) -->
+            <section id="showcase" class="horizontal-showcase section-dark">
+                <div class="horizontal-scroll-wrapper">
+                    <div class="horizontal-panel">
+                        <div class="panel-content">
+                            <span class="panel-num">01</span>
+                            <h2>The Entry</h2>
+                            <p>A dialogue between monolithic structure and the coastal breeze. Designed to redefine the luxury entrance experience in ECR.</p>
+                        </div>
+                        <div class="panel-image">
+                            <img src="frames/00050.webp" alt="Entrance Experience">
+                        </div>
+                    </div>
+                    <div class="horizontal-panel">
+                        <div class="panel-content">
+                            <span class="panel-num">02</span>
+                            <h2>The Living</h2>
+                            <p>Spatial fluidity meets warm South Indian materiality. Teak, lime plaster, and filtered sunlight create a timeless atmosphere.</p>
+                        </div>
+                        <div class="panel-image">
+                            <img src="frames/00150.webp" alt="Lounge Area">
+                        </div>
+                    </div>
+                    <div class="horizontal-panel">
+                        <div class="panel-content">
+                            <span class="panel-num">03</span>
+                            <h2>The Courtyard</h2>
+                            <p>The heart of the villa. Inspired by traditional Chettinad architecture, providing a central lung for the home.</p>
+                        </div>
+                        <div class="panel-image">
+                            <img src="frames/00250.webp" alt="Courtyard Space">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Redesigned Features (Editorial List) -->
+            <section id="features" class="features-section">
+                <div class="features-grid">
+                    <div class="feature-card reveal">
+                        <span class="eyebrow">Evolution</span>
+                        <h3>Tropical Spatial<br>Narratives</h3>
+                        <p>Our architecture doesn't just occupy space; it breathes with it. Open planning invites the ECR breeze, blurring boundaries between luxury and landscape.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <span class="eyebrow">Heritage</span>
+                        <h3>Chettinad Modernity<br>Defined</h3>
+                        <p>A sophisticated fusion of traditional courtyard wisdom and futuristic minimalism, utilizing hand-crafted Athangudi patterns and sustainable teak.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <span class="eyebrow">Materials</span>
+                        <h3>Monolithic Material<br>Honesty</h3>
+                        <p>A curated palette of exposed concrete, lime plaster, and basalt stone—selected for their ability to age with grace in the coastal climate.</p>
+                    </div>
+                    <div class="feature-card reveal">
+                        <span class="eyebrow">Environment</span>
+                        <h3>Silent Passive<br>Intelligence</h3>
+                        <p>Luxury is silence. We integrate passive cooling and solar orientation into the very bones of the building for an eco-conscious legacy.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Visual Gallery -->
+            <section id="gallery" class="gallery-section">
+                <div class="gallery-header reveal">
+                    <div class="header-left">
+                        <span class="eyebrow">Atmosphere</span>
+                        <h2>SPATIAL<br><span class="accent-text">POETRY</span></h2>
+                    </div>
+                    <div class="header-right">
+                        <p style="max-width: 300px; font-size: 0.9rem; color: rgba(0,0,0,0.5);">A visual study of light, materiality, and the tropical soul of our estates.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item v-1 reveal">
+                        <div class="gallery-img-wrapper">
+                            <img src="frames/00080.webp" alt="Villa Capture" class="gallery-img">
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Main Corridor</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item v-2 reveal">
+                        <div class="gallery-img-wrapper">
+                            <img src="frames/00120.webp" alt="Villa Detail" class="gallery-img">
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Material Detail</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item v-3 reveal">
+                        <div class="gallery-img-wrapper">
+                            <img src="frames/00180.webp" alt="Villa Space" class="gallery-img">
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Living Space</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item v-4 reveal">
+                        <div class="gallery-img-wrapper">
+                            <img src="frames/00220.webp" alt="Villa Panoramic" class="gallery-img">
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Panoramic View</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item v-5 reveal">
+                        <div class="gallery-img-wrapper">
+                            <img src="frames/00300.webp" alt="Villa Texture" class="gallery-img">
+                        </div>
+                        <div class="gallery-overlay">
+                            <span>Material Study</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Call to Action -->
+            <section class="cta-section section-padding section-dark center">
+                <div class="container">
+                    <h2 class="reveal-text" style="font-size: clamp(2.5rem, 8vw, 6rem); margin-bottom: 4rem;">Crafting the Future of Tamil Luxury Living</h2>
+                    <div class="reveal-text">
+                        <a href="#contact" class="btn btn-secondary magnetic">Start Your Journey</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Inquiry Section -->
+            <section id="contact" class="contact-section">
+                <div class="contact-bg-text">AARANYA</div>
+                <div class="contact-grid">
+                    <div class="contact-info reveal">
+                        <span class="eyebrow">Connect</span>
+                        <h2>BEGIN YOUR<br><span class="accent-text">LEGACY</span></h2>
+                        <p>Our architectural consultants are available for private consultations to discuss your future sanctuary in the heart of ECR.</p>
+                        
+                        <div class="contact-details">
+                            <div class="detail-item">
+                                <span>Location</span>
+                                <p>142 Coast Road,<br>ECR, Chennai, TN</p>
+                            </div>
+                            <div class="detail-item">
+                                <span>Inquiries</span>
+                                <p>private@<br>aaranyaestates.com</p>
+                            </div>
+                            <div class="detail-item">
+                                <span>Concierge</span>
+                                <p>+91 98400 00000</p>
+                            </div>
+                            <div class="detail-item">
+                                <span>Working Hours</span>
+                                <p>Mon - Sat<br>09:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container reveal">
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" required placeholder=" ">
+                                <label for="name">Your Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" required placeholder=" ">
+                                <label for="email">Email Address</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" rows="4" required placeholder=" "></textarea>
+                                <label for="message">Your Vision</label>
+                            </div>
+                            <button type="submit" class="form-submit-btn">
+                                <span>Send Inquiry</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. Footer -->
+            <footer class="footer">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <img src="aaranya-estate.webp" alt="Aaranya Estates" style="height: 60px;">
+                        <p>Crafting contemporary architectural masterpieces that harmonize with the coastal soul of Tamil Nadu.</p>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Navigation</h4>
+                        <div class="footer-links">
+                            <a href="#home">The Estate</a>
+                            <a href="#experience">Experience</a>
+                            <a href="#gallery">Atmosphere</a>
+                            <a href="#contact">Inquire</a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <div class="footer-links">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Cookie Policy</a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-newsletter">
+                        <h4>Stay Updated</h4>
+                        <p>Subscribe to receive architectural updates and new estate releases.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit" class="newsletter-btn">JOIN</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Aaranya Estates. Architectural Mastery in Tamil Nadu.</p>
+                    <div class="footer-socials">
+                        <a href="#">Instagram</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Behance</a>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- Fullscreen Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="Enlarged Visual" class="lightbox-img">
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
