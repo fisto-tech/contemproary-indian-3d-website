@@ -172,8 +172,7 @@ function initImageSequence() {
     
     let loadedCount = 0;
     const preloader = document.getElementById('preloader');
-    const loadingBar = document.getElementById('loading-bar');
-    const loadingText = document.getElementById('loading-text');
+    const loadingNumber = document.getElementById('loading-number');
 
     const getFrameUrl = (index) => `frames/${(index + 1).toString().padStart(5, '0')}.webp`;
 
@@ -196,8 +195,7 @@ function initImageSequence() {
             img.onload = () => {
                 loadedCount++;
                 const progress = Math.round((loadedCount / frameCount) * 100);
-                if (loadingBar) loadingBar.style.width = `${progress}%`;
-                if (loadingText) loadingText.textContent = `CRAFTING SPATIAL HARMONY ${progress}%`;
+                if (loadingNumber) loadingNumber.textContent = progress.toString().padStart(2, '0');
                 if (loadedCount === 1) renderFrame(0);
                 if (loadedCount === frameCount) onFinishLoading();
             };
@@ -212,6 +210,7 @@ function initImageSequence() {
 
     function onFinishLoading() {
         const tl = gsap.timeline({
+            delay: 0.5,
             onComplete: () => {
                 if (preloader) preloader.style.display = 'none';
                 lenis.start();
@@ -219,13 +218,9 @@ function initImageSequence() {
             }
         });
         
-        tl.to('#preloader-logo', { scale: 1.1, opacity: 0, duration: 0.8, ease: 'power2.in' });
-        tl.to(loadingBar, { opacity: 0, duration: 0.4 }, '-=0.5');
-        tl.to(preloader, {
-            clipPath: 'circle(0% at 50% 50%)',
-            duration: 1.5,
-            ease: 'expo.inOut'
-        });
+        tl.to('.preloader-stat-container', { opacity: 0, y: -20, duration: 0.8, ease: 'power3.in' });
+        tl.to('.panel-left', { xPercent: -100, duration: 1.5, ease: 'expo.inOut' }, '-=0.4');
+        tl.to('.panel-right', { xPercent: 100, duration: 1.5, ease: 'expo.inOut' }, '<');
     }
 
     function renderFrame(index) {
