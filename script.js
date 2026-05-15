@@ -90,7 +90,7 @@ function initCursor() {
     const hoverables = document.querySelectorAll('a, .btn, .btn-circle, .menu-trigger, .gallery-item, .horizontal-panel, button');
     hoverables.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            gsap.to(cursor, { scale: 5, duration: 0.3 });
+            gsap.to(cursor, { scale: 0, duration: 0.3 });
             cursor.classList.add('active');
             follower.classList.add('active');
         });
@@ -316,17 +316,28 @@ function initHorizontalScroll() {
     const wrapper = document.querySelector('.horizontal-scroll-wrapper');
     if (!wrapper) return;
 
-    gsap.to(wrapper, {
-        x: () => -(wrapper.scrollWidth - window.innerWidth),
-        ease: 'none',
-        scrollTrigger: {
-            trigger: '.horizontal-showcase',
-            start: 'top top',
-            end: () => `+=${wrapper.scrollWidth}`,
-            scrub: 1,
-            pin: true,
-            anticipatePin: 1
-        }
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1101px)", () => {
+        // Desktop horizontal scroll
+        gsap.to(wrapper, {
+            x: () => -(wrapper.scrollWidth - window.innerWidth),
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.horizontal-showcase',
+                start: 'top top',
+                end: () => `+=${wrapper.scrollWidth}`,
+                scrub: 1,
+                pin: true,
+                anticipatePin: 1
+            }
+        });
+    });
+
+    mm.add("(max-width: 1100px)", () => {
+        // Mobile/Tablet vertical layout - no GSAP animation needed
+        // but we ensure the wrapper is reset
+        gsap.set(wrapper, { x: 0 });
     });
 }
 
