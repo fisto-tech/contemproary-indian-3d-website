@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMagneticButtons();
     initParallaxGallery();
     initContactReveal();
+    initBackToTop();
 });
 
 // 1. Smooth Scrolling (Lenis)
@@ -214,13 +215,17 @@ function initImageSequence() {
             onComplete: () => {
                 if (preloader) preloader.style.display = 'none';
                 lenis.start();
-                initHeroAnimations();
             }
         });
         
         tl.to('.preloader-stat-container', { opacity: 0, y: -20, duration: 0.8, ease: 'power3.in' });
         tl.to('.panel-left', { xPercent: -100, duration: 1.5, ease: 'expo.inOut' }, '-=0.4');
         tl.to('.panel-right', { xPercent: 100, duration: 1.5, ease: 'expo.inOut' }, '<');
+        
+        // Start the hero animations exactly as the preloader panels begin to slide open
+        tl.add(() => {
+            initHeroAnimations();
+        }, '-=1.5');
     }
 
     function renderFrame(index) {
@@ -467,4 +472,48 @@ function initGalleryLightbox() {
 
     if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+}
+
+// 13. Back to Top with Scroll Progress
+function initBackToTop() {
+    const btn = document.getElementById('backToTop');
+    const progressPath = btn?.querySelector('.progress-circle-bar');
+    if (!btn || !progressPath) return;
+
+    // Circumference of r=46 circle is 2 * PI * 46 = ~289
+    const pathLength = 289;
+    progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
+    progressPath.style.strokeDashoffset = pathLength;
+
+    const updateScroll = () => {
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        
+        // Toggle visibility based on scroll distance (fade in after 300px)
+        if (scrollY > 300) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+
+        // Calculate progress and update the dashoffset
+        if (scrollHeight > 0) {
+            const progress = scrollY / scrollHeight;
+            const offset = pathLength - (progress * pathLength);
+            progressPath.style.strokeDashoffset = offset;
+        }
+    };
+
+    window.addEventListener('scroll', updateScroll);
+    
+    // Smooth scroll to top using Lenis instance
+    btn.addEventListener('click', () => {
+        if (lenis) {
+            lenis.scrollTo(0, { duration: 1.5 });
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    });
+
+    updateScroll();
 }
